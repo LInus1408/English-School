@@ -1,0 +1,54 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+.container1 { /** шапка сайта */
+    background-color: #6675D1;
+    width: 100%;
+}
+/* фон шапки в зависимости от разрешения */
+@media screen and (min-width: 1272px) { 
+    .container1 {
+        height: 60px;
+    }
+}
+@media screen and (min-width: 685px) and (max-width: 1271px) {
+    .container1 {
+        height: 120px;
+    }
+}
+@media screen and (min-width: 390px) and (max-width: 684px) {
+    .container1 {
+        height: 240px;
+    }
+}
+@media screen and (max-width: 389px) {
+    .container1 {
+        height: 450px;
+    }
+}
+.list1 { /* меню шапки */
+    margin: 0px;
+    margin: 0px 9% 0px 9%;
+    padding: 0px;
+    width: calc(100%-18%);
+}
+.list1 li { /* менюшки */
+   list-style-type: none;
+   float: left;
+   background-color: #534ED9;
+   margin-top: 15px;
+   margin-right: 10px;
+   border-radius: 10px;
+}
+.list1 a:link, a:visited  { /* ссылки меню шапки */
+  color: white;
+  padding: 15px;
+  line-height: 40px;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.list1 a:hover, a:active { /* ссылки меню шапки */
+    text-shadow: 0px 0px 1px red;
+}
+
