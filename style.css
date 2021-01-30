@@ -1,3 +1,4 @@
+/* всего 5 контейнеров */
 body {
     margin: 0px;
     padding: 0px;
@@ -55,45 +56,107 @@ body {
     width: 100%;
     height: 400px;
 }
-.container3 {
+.container3 { /* блок про обучение, характеристика блока */
+    width: 100%;
+    height: 1080px;
+    background-color: Gainsboro;
+    flex-direction: column;
+    display: flex;
+    justify-items: space-between;
+}
+.container3 .part2 { /* части блока */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 400px;
-    background-color: slategray;
+    margin: 20px 0px;
 }
-.container3 .block {
-    width: 220px;
-    height: 280px;
-    background-color: red;
+.container3 .part2 .block { /* блоки частей блока */
+    width: 49%;
+    height: 320px;
+    background: 
+    linear-gradient(rgba(135, 60, 255, 0.4), rgba(135, 60, 255, 0.0) 80%),
+    linear-gradient(-45deg, rgba(120, 155, 255, 0.9) 25%, rgba(255, 160, 65, 0.9) 75%);
     margin-right: 30px;
 }
-.container3 .block:last-child {
+.container3 .part2 .block:last-child { /* что бы небыло отсупа контейнера */
     margin-right: 0px;
 }
-.container4 {
+.container3 .part2 .block h2 { /* заголовки блока */
+    margin: 15px 0px 0px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container3 .part2 .block p {  /* абзацы блока */
+    color: #800000;
+    font-weight: 900;
+    margin: 10px 0px 0px 15px;
+}
+.container3 .part2 .block ul li { /* маркированный список блока */
+    list-style: none;
+    padding-bottom: 5px;
+    margin-left: -25px;
+    font-size: 1em;
+}
+.container3 .part2 .block ul li::before { /* галочки для маркированного списка */
+    content: '\2611';
+    padding-right: 5px;
+    font-size: 1.3em;
+    color: black;
+}
+.container4 { /* блок о Трудоустройстве и о школе, общие характеристики блока */
     width: 100%;
     height: 300px;
     background-color: tomato;
     display: flex;
     justify-content: space-between;
 }
-.container4 .part1 {
+/* размер шрифта блока при разном размере страницы */
+@media screen and (min-width: 1020px) { 
+    .container4 {
+        font-size: 1.3vw;
+    }
+}
+@media screen and (min-width: 750px)  and (max-width: 1019px) {
+    .container4 {
+        font-size: 1.7vw;
+    }
+}
+@media screen and (min-width: 320px)  and (max-width: 749px) {
+    .container4 {
+        font-size: 1.9vw;
+    }
+}
+.container4 .part1 { /* характеристика частей блока */
     width: 48%;
     background-color: #f3f2f0;
     height: 100%;
 }
-.container4 .part1 h2 {
+.container4 .part1 h2 { /* заголовок блока */
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     text-align: center;
 }
-.container4 .part1 p {
-    font-size: 1.3vw;
+.container4 .part1 p { /* абзац блока */
+    text-indent: 20px;
+    margin: 5px;
+    text-align: justify;
 }
+.container4 .part1 li { /* список блока */
+    list-style-type: none;
+    text-indent: -1em;
+}
+.container4 .part1 li::before { /* красивая галочка для блока */
+    content: '\2713';
+    color: green;
+    padding-right: 5px;
+    font-size: 1.3em;
+}
+
 .container5 {
     width: 100%;
     height: 300px;
-    background-color: seagreen;
+    background-color: #23252c;
+}
+img {
+    float: left; /* обтекание фотографии */
 }
