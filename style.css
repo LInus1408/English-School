@@ -32,7 +32,7 @@ body {
     margin: 0px;
     margin: 0px 9% 0px 9%;
     padding: 0px;
-    width: calc(100%-18%);
+    width: 82%;
 }
 .list1 li { /* менюшки */
    list-style-type: none;
@@ -136,7 +136,7 @@ body {
     background-color: Gainsboro;
     flex-direction: column;
     display: flex;
-    justify-items: space-between;
+    justify-content: space-between;
 }
 .container3 .part2 { /* части блока */
     display: flex;
