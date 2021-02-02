@@ -52,9 +52,83 @@ body {
 .list1 a:hover, a:active { /* ссылки меню шапки */
     text-shadow: 0px 0px 1px red;
 }
-.container2 {
+.container2 { /* второй блок, тест, анимация, реклама */
+    margin: 0px;
+    padding: 0px;
     width: 100%;
-    height: 400px;
+    height: 550px;
+    background-image: linear-gradient(Silver, white, Silver);
+}
+.container2 p { /* абзаца второго блока */
+    color: red;
+    font-weight: 900;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    width: 100%;
+    margin-right: 10px;
+    margin: 0px;
+    text-align: center;
+}
+
+.container2 li { /* абзаца второго блока в виде менюшек*/
+    list-style-type: none;
+    float: left;
+    width: 45%;
+    animation: blink1 1s linear infinite; /* скорость блика анимации */
+    font-weight: 900;
+    font-size: 24px;
+    display: block;
+    margin: 0px 20px 20px 0px;
+}
+@keyframes blink1 { /* что бы текст мигал */
+    0% { color: orange;} 
+    50% { color: DarkRed;} 
+    100% { color: orange;} 
+}
+.container2 li a:link, a:visited { /* ссылка на тест */
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+.container2 li a:hover, a:active { /* ссылка на тест */
+    color: Navy;
+}
+.container2 .animation { /* анимация кораблик */
+    height: 0; 
+    width: 15%;
+    margin-top: 400px;
+    margin-left: 31%;
+    position: absolute;
+    border-top: 70px solid #f8df0a; /* основание корабля в виде трапеции */
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    animation-name: moveit; /* имя анимации */
+    animation-duration: 10s; /* продолжительность выполнения анимации */
+    animation-iteration-count: infinite; /* бесконечно анимация выполняется */
+   
+}
+.container2 .animation::before { /* прямоугольник на кораблике */
+    content: "";
+    position: absolute;
+    margin-top: -110px;
+    margin-left: 10%;
+    width: 80%;
+    height: 40px;
+    background-image: radial-gradient(circle, #448eed 20%, #f76d55 20%);
+}
+.container2 .animation::after { /* труба кораблика */
+    content: "";
+    position: absolute;
+    margin-top: -150px;
+    margin-left: 45%;
+    width: 10%;
+    height: 40px;
+    background-color: #a19c9a;
+}
+@keyframes moveit { /* анимация, туда-сюда */
+    0%   {left:0%;}
+    50%  {left:30%}  
+    100% {left:0%}
 }
 .container3 { /* блок про обучение, характеристика блока */
     width: 100%;
@@ -152,11 +226,34 @@ body {
     font-size: 1.3em;
 }
 
-.container5 {
+.container5 { /* конейнер блока и контактов */
     width: 100%;
-    height: 300px;
     background-color: #23252c;
 }
-img {
+.container5 img { /* картинки в таблицах блока */
     float: left; /* обтекание фотографии */
+    margin: 7px;
+}
+table {border-collapse: collapse;} /* таблица */
+.container5 th, td { /* таблица */
+    color: #c4c4bc;
+    line-height: 35px;
+    font-style: italic;
+}
+.container5 th { /* таблица */
+    text-align: center;
+    font-weight: 900;
+}
+.container5 td { /* таблица */
+    width: 50%;
+    padding-right: 15px;
+    text-align: left;
+}
+.container5 td:nth-child(2) { /* отступ таблицы */
+    padding-right: 0px;
+}
+@media screen and (max-width: 400px) { /* убирание float при изменение размера таблицы */
+    .container5 img {
+        float: none;
+    }
 }
